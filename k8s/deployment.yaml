@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: advertising-sales-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: advertising-sales-api
+  template:
+    metadata:
+      labels:
+        app: advertising-sales-api
+    spec:
+      containers:
+        - name: advertising-sales-api
+          image: mohamedabdelnasser414/advertising-sales-api:latest
+          ports:
+            - containerPort: 5000
