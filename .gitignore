@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+mlops_env/
+models/*.pkl
+data/cleaned_data.csv
+mlruns/
