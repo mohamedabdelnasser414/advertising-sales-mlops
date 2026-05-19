@@ -1,0 +1,27 @@
+name: Deploy to Kind Kubernetes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-kubernetes:
+    runs-on: [self-hosted, docker]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Pull Latest Docker Image
+        run: |
+          docker pull mohamedabdelnasser414/advertising-sales-api:latest
+
+      - name: Apply Kubernetes Deployment
+        run: |
+          kubectl apply -f k8s/deployment.yaml
+          kubectl apply -f k8s/service.yaml
+
+      - name: Check Kubernetes Resources
+        run: |
+          kubectl get deployments
+          kubectl get pods
+          kubectl get services
