@@ -1,6 +1,10 @@
 name: Deploy to Kind Kubernetes
 
 on:
+  push:
+    branches:
+      - main
+
   workflow_dispatch:
 
 jobs:
