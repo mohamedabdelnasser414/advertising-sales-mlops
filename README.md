@@ -312,6 +312,5 @@ Machine Learning Predictions
 ---
 
 # Author
-
 Mohamed Abdelnasser
 
